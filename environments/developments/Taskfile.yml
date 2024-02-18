@@ -37,11 +37,11 @@ tasks:
 
   composer:
     desc: Run composer
-    cmd: docker {{.COMPOSE_COMMAND}} run php-fpm composer {{.CLI_ARGS}}
+    cmd: docker {{.COMPOSE_COMMAND}} run --rm php-fpm composer {{.CLI_ARGS}}
 
   yii:
     desc: Run application console command
-    cmd: docker {{.COMPOSE_COMMAND}} run php-fpm ./yii {{.CLI_ARGS}}
+    cmd: docker {{.COMPOSE_COMMAND}} run --rm php-fpm ./yii {{.CLI_ARGS}}
 
   create-env:
     desc: Create .env file
