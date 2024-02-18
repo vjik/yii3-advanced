@@ -33,7 +33,7 @@ tasks:
 
   cli:
     desc: Open application shell
-    cmd: docker exec -it {{.PROJECT_NAME}}-php-fpm-1 sh
+    cmd: docker {{.COMPOSE_COMMAND}} exec php-fpm sh
 
   composer:
     desc: Run composer
