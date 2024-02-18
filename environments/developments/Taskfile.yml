@@ -1,0 +1,48 @@
+version: 3
+
+vars:
+  PROJECT_NAME: yii3-advanced
+  COMPOSE_COMMAND: compose --project-name {{.PROJECT_NAME}}
+
+tasks:
+  init:
+    desc: Development environment initialization
+    cmds:
+      - task: create-env
+      - task: docker-build
+
+  restart:
+    desc: Restart development containers
+    cmds:
+      - task: docker-down
+      - task: docker-up
+
+  docker-up:
+    desc: Start development containers
+    aliases: [ up ]
+    cmd: docker {{.COMPOSE_COMMAND}} up --detach
+
+  docker-down:
+    desc: Stop development containers
+    aliases: [ down ]
+    cmd: docker {{.COMPOSE_COMMAND}} down --remove-orphans
+
+  docker-build:
+    desc: Build development containers
+    cmd: docker {{.COMPOSE_COMMAND}} build {{.CLI_ARGS}}
+
+  cli:
+    desc: Open application shell
+    cmd: docker exec -it {{.PROJECT_NAME}}-php-fpm-1 sh
+
+  composer:
+    desc: Run composer
+    cmd: docker {{.COMPOSE_COMMAND}} run php-fpm composer {{.CLI_ARGS}}
+
+  yii:
+    desc: Run application console command
+    cmd: docker {{.COMPOSE_COMMAND}} run php-fpm ./yii {{.CLI_ARGS}}
+
+  create-env:
+    desc: Create .env file
+    cmd: ./create-env.sh

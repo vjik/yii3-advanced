@@ -1,0 +1,27 @@
+{
+    "name": "vjik/yii3-advanced",
+    "description": "Yii3 Advanced application template",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "autoload": {
+        "psr-4": {
+            "App\\Core\\": "core/src",
+            "App\\Gateways\\Console\\": "gateways/console/src"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "yiisoft/yii-console": "^2.2",
+        "yiisoft/yii-runner-console": "^2.1",
+        "yiisoft/config": "^1.5",
+        "yiisoft/event-dispatcher": "^1.1"
+    },
+    "extra": {
+        "config-plugin-file": "config/configuration.php"
+    },
+    "config": {
+        "allow-plugins": {
+            "yiisoft/config": true
+        }
+    }
+}

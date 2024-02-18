@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  php-fpm:
+    build:
+      context: ./php-fpm
+    user: ${USER_ID}:${GROUP_ID}
+    environment:
+      COMPOSER_CACHE_DIR: /tmp/composer-cache
+      YII_DEBUG: true
+      YII_ENV: development
+    volumes:
+      - ../../:/app
+      - ./runtime/composer-cache:/tmp/composer-cache
