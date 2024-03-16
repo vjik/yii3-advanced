@@ -12,3 +12,16 @@ services:
     volumes:
       - ../../:/app
       - ./runtime/composer-cache:/tmp/composer-cache
+
+  nginx:
+    image: nginx:1.25.3-alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ../../:/app:ro
+      - ./runtime/nginx-log:/var/log/nginx
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/cert:/etc/nginx/cert
+    depends_on:
+      - php-fpm

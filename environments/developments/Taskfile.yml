@@ -1,6 +1,7 @@
 version: 3
 
 vars:
+  DEV_FRONTEND_URL: yii3-advanced.test
   PROJECT_NAME: yii3-advanced
   COMPOSE_COMMAND: compose --project-name {{.PROJECT_NAME}}
 
@@ -46,3 +47,7 @@ tasks:
   create-env:
     desc: Create .env file
     cmd: ./create-env.sh
+
+  create-cert:
+    desc: Create development SSL sertificates
+    cmd: mkcert -cert-file=./nginx/cert/frontend.crt -key-file=./nginx/cert/frontend.key {{.DEV_FRONTEND_URL}}
