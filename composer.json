@@ -14,7 +14,8 @@
         "yiisoft/yii-console": "^2.2",
         "yiisoft/yii-runner-console": "^2.1",
         "yiisoft/config": "^1.5",
-        "yiisoft/event-dispatcher": "^1.1"
+        "yiisoft/event-dispatcher": "^1.1",
+        "yiisoft/yii-runner-http": "^2.2"
     },
     "extra": {
         "config-plugin-file": "config/configuration.php"
