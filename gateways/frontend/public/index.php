@@ -10,5 +10,6 @@ require_once dirname(__DIR__, 2) . '/bootstrap.php';
     rootPath: dirname(__DIR__, 3),
     debug: $_ENV['YII_DEBUG'],
     checkEvents: $_ENV['YII_DEBUG'],
-    environment: $_ENV['YII_ENV']
+    environment: $_ENV['YII_ENV'],
+    diGroup: 'di-frontend',
 ))->run();

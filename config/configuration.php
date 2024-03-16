@@ -8,7 +8,14 @@ return [
     ],
     'config-plugin' => [
         'params' => 'common/params.php',
+        'di' => 'common/definitions/*',
         'di-console' => '$di',
+        'di-frontend' => [
+            '$di',
+            '$di-web',
+            'frontend/definitions/*',
+        ],
+        'params-web' => '$params',
         'params-console' => [
             '$params',
             'console/params.php',
