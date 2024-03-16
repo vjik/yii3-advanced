@@ -2,11 +2,20 @@
 
 declare(strict_types=1);
 
-use Yiisoft\Html\Html;
+use App\Gateways\Frontend\Layout\Error\ErrorAsset;use Yiisoft\Html\Html;
 
 /**
  * @var string $content
+ * @var \Yiisoft\Assets\AssetManager $assetManager
  */
+
+$assetManager->register(ErrorAsset::class);
+
+$this->addCssFiles($assetManager->getCssFiles());
+$this->addCssStrings($assetManager->getCssStrings());
+$this->addJsFiles($assetManager->getJsFiles());
+$this->addJsStrings($assetManager->getJsStrings());
+$this->addJsVars($assetManager->getJsVars());
 
 $this->beginPage()
 ?><!DOCTYPE html>

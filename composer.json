@@ -23,7 +23,8 @@
         "yiisoft/router": "^3.1",
         "yiisoft/router-fastroute": "^3.0",
         "yiisoft/view": "^8.0",
-        "yiisoft/yii-view": "^6.0"
+        "yiisoft/yii-view": "^6.0",
+        "yiisoft/assets": "^4.0"
     },
     "extra": {
         "config-plugin-file": "config/configuration.php"

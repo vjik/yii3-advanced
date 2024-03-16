@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use Yiisoft\Assets\AssetManager;
+use Yiisoft\Definitions\Reference;
 use Yiisoft\Yii\View\ViewRenderer;
 
 return [
@@ -9,6 +11,17 @@ return [
         '__construct()' => [
             'viewPath' => '',
             'layout' => '@root/gateways/frontend/layout/main.php'
+        ],
+    ],
+
+    \Yiisoft\View\WebView::class => [
+        '__construct()' => [
+            'basePath' => '',
+        ],
+        'setParameters()' => [
+            [
+                'assetManager' => Reference::to(AssetManager::class),
+            ],
         ],
     ],
 ];

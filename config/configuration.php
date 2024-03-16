@@ -15,7 +15,11 @@ return [
             '$di-web',
             'frontend/definitions/*',
         ],
-        'params-web' => '$params',
+        'params-frontend' => [
+            '$params',
+            '$params-web',
+            'frontend/params.php'
+        ],
         'params-console' => [
             '$params',
             'console/params.php',
