@@ -6,6 +6,6 @@ use Yiisoft\Router\Route;
 
 return [
     Route::get('/')
-        ->action(\App\Gateways\Frontend\HelloWebAction::class)
+        ->action(\App\Gateways\Frontend\ExampleAction\ExampleAction::class)
         ->name('site/index')
 ];

@@ -21,7 +21,9 @@
         "yiisoft/middleware-dispatcher": "^5.2",
         "yiisoft/error-handler": "^3.2",
         "yiisoft/router": "^3.1",
-        "yiisoft/router-fastroute": "^3.0"
+        "yiisoft/router-fastroute": "^3.0",
+        "yiisoft/view": "^8.0",
+        "yiisoft/yii-view": "^6.0"
     },
     "extra": {
         "config-plugin-file": "config/configuration.php"

@@ -2,4 +2,8 @@
 
 declare(strict_types=1);
 
-return [];
+return [
+    'yiisoft/aliases' => [
+        'aliases' => require_once __DIR__ . '/aliases.php',
+    ],
+];
